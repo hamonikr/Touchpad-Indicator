@@ -1,3 +1,12 @@
+touchpad-indicator (2.2.4) noble; urgency=medium
+
+  * Support for Ubuntu 24.04
+  * Update Standards-Version to 4.6.2
+  * Update debhelper-compat to 13
+  * Fix systemd suspend/resume scripts
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 30 Dec 2024 00:13:31 +0900
+  
 touchpad-indicator (2.2.3-ubuntu20.04.0) focal; urgency=medium
 
   * fix minimal error

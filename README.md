@@ -1,75 +1,43 @@
-<h1 align="center">Welcome to Touchpad-Indicator 👋</h1>
-<p>
-  <img src="https://img.shields.io/badge/version-2.2.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://www.atareao.es/aplicacion/touchpad-indicator-para-ubuntu/">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
-  </a>
-  <a href="https://twitter.com/atareao">
-    <img alt="Twitter: atareao" src="https://img.shields.io/twitter/follow/atareao.svg?style=social" target="_blank" />
-  </a>
-</p>
+<h1 align="center">Touchpad-Indicator </h1>
 
-> With Touchpad Indicator you can enable or disable the touchpad, with shortcuts or by clicking on menu. Besides, it enables or disables the touchpad, when the computer returns from hibernation.
+## 프로젝트 소개
 
-### 🏠 [Homepage](https://www.atareao.es/aplicacion/touchpad-indicator-para-ubuntu/)
+Touchpad-Indicator는 터치패드를 쉽게 활성화하거나 비활성화할 수 있는 도구입니다.
 
-## Requirements
+Touchpad-Indicator is a tool that allows you to easily enable or disable the touchpad.
 
-Required dependencies
+- Upstream: https://github.com/atareao/Touchpad-Indicator
 
-```
-gir1.2-gtk-3.0,
-gir1.2-gdkpixbuf-2.0,
-gir1.2-appindicator3-0.1,
-gir1.2-notify-0.7,
-gir1.2-gconf-2.0,
-gir1.2-rsvg-2.0,
-python3-xlib,
-python3-pyudev,
-python3-dbus,
-xinput
+하모니카 8.0 이상 또는 우분투 24.04 버전 지원
+
+Supports HamoniKR 8.0 or later and Ubuntu 24.04 version.
+
+
+### Install
+
+Download the latest version from the [Releases](https://github.com/hamonikr/touchpad-indicator/releases) page.
+
+```bash
+sudo apt install -f ./touchpad-indicator_*.deb
 ```
 
-## Install from PPA
+### Usage
 
-```sh
-sudo add-apt-repository ppa:atareao/atareao
-sudo apt update
-sudo apt install touchpad-indicator
-```
+프로그램 실행 후 시스템 트레이에 터치패드 아이콘을 클릭하여 터치패드를 활성화하거나 비활성화할 수 있습니다.
 
-## Build it from source and install it after that
+After running the program, click on the touchpad icon in the system tray to enable or disable the touchpad.
 
-```sh
-git clone https://github.com/atareao/Touchpad-Indicator
-cd Touchpad-Indicator
-rm ./debian/source/format
-dpkg-buildpackage
-cd ..
-sudo dpkg -i touchpad-indicator_*_all.deb
-sudo apt-get install -f -y
-```
+![스크린샷](./docs/tray.png)
 
-## Usage
+## 스크린샷
 
-```sh
-touchpad-indicator
-```
+![스크린샷](./docs/app-1.png)
 
-## Author
+![스크린샷](./docs/app-2.png)
 
-👤 **Lorenzo Carbonell**
+![스크린샷](./docs/app-3.png)
 
-* Twitter: [@atareao](https://twitter.com/atareao)
-* Github: [@atareao](https://github.com/atareao)
+![스크린샷](./docs/app-4.png)
 
-## 🤝 Contributing
+![스크린샷](./docs/app-5.png)
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/atareao/Touchpad-Indicator/issues).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

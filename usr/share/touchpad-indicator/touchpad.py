@@ -61,28 +61,44 @@ def search_touchpad(where):
 
 class Touchpad(object):
     def __init__(self):
-        pass
+        self._has_touchpad = None
+        self._touchpad_ids = None
 
     def _get_all_ids(self):
-        test_str = run('xinput --list').lower()
-        regex = r'id=(\d*)'
-        prog = re.compile(regex)
-        return prog.findall(test_str)
+        try:
+            test_str = run('xinput --list').lower()
+            regex = r'id=(\d*)'
+            prog = re.compile(regex)
+            return prog.findall(test_str)
+        except Exception as e:
+            print(f"Warning: Could not get device IDs: {str(e)}")
+            return []
 
     def _is_touchpad(self, id):
-        comp = run(('xinput --list-props %s') % (id))
-        return search_touchpad(comp)
+        try:
+            comp = run(('xinput --list-props %s') % (id))
+            return search_touchpad(comp)
+        except Exception as e:
+            print(f"Warning: Could not check if device {id} is touchpad: {str(e)}")
+            return False
 
     def is_there_touchpad(self):
-        comp = run('xinput --list')
-        return search_touchpad(comp)
+        if self._has_touchpad is None:
+            try:
+                comp = run('xinput --list')
+                self._has_touchpad = search_touchpad(comp)
+            except Exception as e:
+                print(f"Warning: Could not check for touchpad: {str(e)}")
+                self._has_touchpad = False
+        return self._has_touchpad
 
     def _get_ids(self):
-        ids = []
-        for id in self._get_all_ids():
-            if self._is_touchpad(id):
-                ids.append(id)
-        return ids
+        if self._touchpad_ids is None:
+            self._touchpad_ids = []
+            for id in self._get_all_ids():
+                if self._is_touchpad(id):
+                    self._touchpad_ids.append(id)
+        return self._touchpad_ids
 
     def set_touchpad_enabled(self, id):
         test_str = run('xinput --list-props %s' % (id)).lower()

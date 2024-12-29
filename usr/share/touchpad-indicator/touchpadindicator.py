@@ -95,9 +95,20 @@ class TouchpadIndicator(dbus.service.Object):
                                      '/es/atareao/TouchpadIndicator')
         self.about_dialog = None
         self.the_watchdog = None
-        self.icon = comun.ICON
-        self.active_icon = None
-        self.attention_icon = None
+        
+        # 아이콘 초기화
+        self.icon = '/usr/share/icons/hicolor/scalable/apps/touchpad-indicator.svg'
+        self.active_icon = '/usr/share/icons/hicolor/scalable/apps/touchpad-indicator-light-enabled.svg'
+        self.attention_icon = '/usr/share/icons/hicolor/scalable/apps/touchpad-indicator-light-disabled.svg'
+        
+        # 아이콘 파일 존재 확인
+        if not os.path.exists(self.active_icon):
+            print(f"Error: Icon file not found: {self.active_icon}")
+            sys.exit(1)
+        if not os.path.exists(self.attention_icon):
+            print(f"Error: Icon file not found: {self.attention_icon}")
+            sys.exit(1)
+
         self.keyboardMonitor = None
         self.doItAfter = None
         self.enable_after = 0.2
@@ -107,11 +118,26 @@ class TouchpadIndicator(dbus.service.Object):
         self.interval = 0
         self.time_watcher = 0
 
-        self.notification = Notify.Notification.new('', '', None)
-        self.indicator = appindicator.Indicator.new(
-            'Touchpad-Indicator',
-            '',
-            appindicator.IndicatorCategory.HARDWARE)
+        # Initialize notification
+        try:
+            self.notification = Notify.Notification.new('', '', None)
+        except Exception as e:
+            print(f"Warning: Could not initialize notification: {str(e)}")
+            self.notification = None
+
+        # Initialize indicator with explicit icon path
+        try:
+            self.indicator = appindicator.Indicator.new(
+                'Touchpad-Indicator',
+                self.active_icon,
+                appindicator.IndicatorCategory.HARDWARE)
+            self.indicator.set_icon_full(self.active_icon, 'Touchpad Indicator')
+            self.indicator.set_attention_icon_full(self.attention_icon, 'Touchpad Indicator')
+            self.indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
+            print(f"Indicator initialized with icon: {self.active_icon}")
+        except Exception as e:
+            print(f"Error initializing indicator: {str(e)}")
+            sys.exit(1)
 
         menu = self.get_menu()
         self.indicator.set_menu(menu)

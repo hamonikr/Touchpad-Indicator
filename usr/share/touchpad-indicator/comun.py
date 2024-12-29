@@ -74,10 +74,10 @@ PARAMS = {
 STATUS_ICON = {}
 if is_package():
     ROOTDIR = '/usr/share/'
-    LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
+    LANGDIR = os.path.join(ROOTDIR, 'locale')
     APPDIR = os.path.join(ROOTDIR, APP)
     AUTOSTART_SOURCE_DIR = APPDIR
-    ICONDIR = os.path.join(APPDIR, 'icons')
+    ICONDIR = '/usr/share/icons/hicolor/scalable/apps'
     SOCIALDIR = os.path.join(APPDIR, 'social')
     CHANGELOG = os.path.join(APPDIR, 'changelog')
 else:
@@ -89,19 +89,13 @@ else:
     DEBIANDIR = os.path.normpath(os.path.join(ROOTDIR, '../debian'))
     CHANGELOG = os.path.join(DEBIANDIR, 'changelog')
 
-ICON = os.path.join(ICONDIR, 'touchpad-indicator-normal-enabled.svg')
-STATUS_ICON['normal'] = (os.path.join(ICONDIR,
-                         'touchpad-indicator-normal-enabled.svg'),
-                         os.path.join(ICONDIR,
-                         'touchpad-indicator-normal-disabled.svg'))
-STATUS_ICON['light'] = (os.path.join(ICONDIR,
-                        'touchpad-indicator-light-enabled.svg'),
-                        os.path.join(ICONDIR,
-                        'touchpad-indicator-light-disabled.svg'))
-STATUS_ICON['dark'] = (os.path.join(ICONDIR,
-                       'touchpad-indicator-dark-enabled.svg'),
-                       os.path.join(ICONDIR,
-                       'touchpad-indicator-dark-disabled.svg'))
+ICON = os.path.join(ICONDIR, 'touchpad-indicator.svg')
+STATUS_ICON['normal'] = (os.path.join(ICONDIR, 'touchpad-indicator-normal-enabled.svg'),
+                        os.path.join(ICONDIR, 'touchpad-indicator-normal-disabled.svg'))
+STATUS_ICON['light'] = (os.path.join(ICONDIR, 'touchpad-indicator-light-enabled.svg'),
+                       os.path.join(ICONDIR, 'touchpad-indicator-light-disabled.svg'))
+STATUS_ICON['dark'] = (os.path.join(ICONDIR, 'touchpad-indicator-dark-enabled.svg'),
+                      os.path.join(ICONDIR, 'touchpad-indicator-dark-disabled.svg'))
 
 
 CONFIG_DIR = os.path.join(os.path.expanduser('~'), '.config')
@@ -114,24 +108,29 @@ FILE_AUTO_START_SRC = os.path.join(AUTOSTART_SOURCE_DIR, FILE_AUTO_START_NAME)
 FILE_AUTO_START = os.path.join(AUTOSTART_DIR, FILE_AUTO_START_NAME)
 WATCHDOG = os.path.join(APPDIR, 'watchdog.py')
 
-f = open(CHANGELOG, 'r')
-line = f.readline()
-f.close()
-pos = line.find('(')
-posf = line.find(')', pos)
-VERSION = line[pos + 1: posf].strip()
-if not is_package():
-    VERSION = VERSION + '-src'
+VERSION = 'unknown'
+try:
+    if os.path.exists(CHANGELOG):
+        with open(CHANGELOG, 'r') as f:
+            line = f.readline()
+            pos = line.find('(')
+            posf = line.find(')', pos)
+            if pos > -1 and posf > -1:
+                VERSION = line[pos + 1: posf].strip()
+                if not is_package():
+                    VERSION = VERSION + '-src'
+except Exception as e:
+    print(f"Warning: Could not read changelog: {str(e)}")
 
 try:
     current_locale, encoding = locale.getdefaultlocale()
-    language = gettext.translation(APP, LANGDIR, [current_locale])
+    if current_locale is None:
+        current_locale = 'en_US'
+    print(f"Current locale: {current_locale}")
+    language = gettext.translation(APP, LANGDIR, [current_locale], fallback=True)
     language.install()
-    print(language)
-    if sys.version_info[0] == 3:
-        _ = language.gettext
-    else:
-        _ = language.ugettext
+    print(f"Loaded language: {language}")
+    _ = language.gettext
 except Exception as e:
-    print(e)
+    print(f"Error loading language: {str(e)}")
     _ = str

@@ -1,13 +1,24 @@
-#!/bin/bash
-for user in $(cat /etc/passwd | grep -v /bin/false | grep -v nologin | grep /home | cut -d : -f 1)
-do
-	usermod -aG input $user
-done
-if [ ! -e "/usr/local/sbin/adduser.local" ]
-then
-	echo "No existe"
-	touch "/usr/local/sbin/adduser.local"
-	echo "#!/bin/bash" > /usr/local/sbin/adduser.local
-	chmod +x "/usr/local/sbin/adduser.local"
-fi
-echo 'usermod -aG input "${1:?}" #TPI' >> /usr/local/sbin/adduser.local
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        # 터치패드 존재 여부 확인
+        if ! xinput list | grep -i touchpad >/dev/null 2>&1; then
+            echo "No touchpad device found. Some features may not work."
+        fi
+        
+        # 기존 postinst 작업들...
+        if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
+            /usr/share/update-notifier/notify-reboot-required
+        fi
+        ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+        ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

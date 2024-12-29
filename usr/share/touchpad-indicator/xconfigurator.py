@@ -103,7 +103,7 @@ class XFCEConfiguration:
         out = getoutput('xfconf-query -c %s -l' % self.channel)
         keys = []
         for key in out.split('\n'):
-            if '\override' not in key:
+            if '\\override' not in key:
                 key = key.rstrip().lstrip()
                 value = self.get_value(key)
                 keys.append({'key': key, 'value': value})

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="apps.touchpad-indicator" path="/apps/touchpad-indicator/">
+    <key name="first-time" type="b">
+      <default>true</default>
+      <summary>First time running</summary>
+      <description>Whether this is the first time running the application</description>
+    </key>
+    <key name="version" type="s">
+      <default>''</default>
+      <summary>Version</summary>
+      <description>Application version</description>
+    </key>
+    <key name="autostart" type="b">
+      <default>false</default>
+      <summary>Autostart</summary>
+      <description>Whether to start automatically on login</description>
+    </key>
+    <key name="on-mouse-plugged" type="b">
+      <default>true</default>
+      <summary>Disable on mouse plugged</summary>
+      <description>Whether to disable touchpad when mouse is plugged</description>
+    </key>
+    <key name="start-hidden" type="b">
+      <default>false</default>
+      <summary>Start hidden</summary>
+      <description>Whether to start with indicator hidden</description>
+    </key>
+    <key name="show-notifications" type="b">
+      <default>true</default>
+      <summary>Show notifications</summary>
+      <description>Whether to show notifications</description>
+    </key>
+    <key name="theme" type="s">
+      <default>'normal'</default>
+      <summary>Theme</summary>
+      <description>Icon theme (light/dark/normal)</description>
+    </key>
+    <key name="touchpad-enabled" type="b">
+      <default>true</default>
+      <summary>Touchpad enabled</summary>
+      <description>Whether touchpad is enabled</description>
+    </key>
+    <key name="on-start" type="i">
+      <default>0</default>
+      <summary>On start action</summary>
+      <description>Action to take on start (0: none, 1: enable, -1: disable)</description>
+    </key>
+    <key name="on-end" type="i">
+      <default>0</default>
+      <summary>On end action</summary>
+      <description>Action to take on end (0: none, 1: enable, -1: disable)</description>
+    </key>
+    <key name="disable-on-typing" type="b">
+      <default>true</default>
+      <summary>Disable on typing</summary>
+      <description>Whether to disable touchpad while typing</description>
+    </key>
+    <key name="interval" type="i">
+      <default>1000</default>
+      <summary>Typing interval</summary>
+      <description>Milliseconds to wait after typing before re-enabling touchpad</description>
+    </key>
+    <key name="natural-scrolling" type="b">
+      <default>false</default>
+      <summary>Natural scrolling</summary>
+      <description>Whether to use natural scrolling</description>
+    </key>
+    <key name="two-finger-scrolling" type="b">
+      <default>true</default>
+      <summary>Two finger scrolling</summary>
+      <description>Whether to enable two finger scrolling</description>
+    </key>
+    <key name="edge-scrolling" type="b">
+      <default>false</default>
+      <summary>Edge scrolling</summary>
+      <description>Whether to enable edge scrolling</description>
+    </key>
+    <key name="circular-scrolling" type="b">
+      <default>false</default>
+      <summary>Circular scrolling</summary>
+      <description>Whether to enable circular scrolling</description>
+    </key>
+    <key name="tapping" type="b">
+      <default>true</default>
+      <summary>Tapping</summary>
+      <description>Whether to enable tapping</description>
+    </key>
+    <key name="speed" type="d">
+      <default>0.0</default>
+      <summary>Touchpad speed</summary>
+      <description>Touchpad pointer speed</description>
+    </key>
+  </schema>
+</schemalist> 

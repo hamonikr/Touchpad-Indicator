@@ -1,9 +1,18 @@
-#!/bin/bash
-sed -i -E 's/.*#TPI$//g' /usr/local/sbin/adduser.local
-for user in $(cat /etc/passwd | grep -v /bin/false | grep -v nologin | grep /home | cut -d : -f 1)
-do
-	if [ `grep -q "input:.*${user}.*" /etc/group` ]
-	then
-		deluser $user input
-	fi
-done
+#!/bin/sh
+set -e
+
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+    # Remove TPI marker from adduser.local
+    if [ -f /usr/local/sbin/adduser.local ]; then
+        sed -i -E 's/.*#TPI$//g' /usr/local/sbin/adduser.local
+    fi
+
+    # Remove users from input group
+    for user in $(getent passwd | grep -v /bin/false | grep -v nologin | grep /home | cut -d : -f 1); do
+        if getent group input | grep -q "\b${user}\b"; then
+            deluser "$user" input || true
+        fi
+    done
+fi
+
+#DEBHELPER#

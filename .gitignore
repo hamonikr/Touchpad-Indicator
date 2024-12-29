@@ -88,3 +88,7 @@ ENV/
 .ropeproject
 src/.mypy_cache/
 debian/files
+debian/.debhelper/
+debian/touchpad-indicator/
+debian/*.debhelper.log
+debian/*.substvars

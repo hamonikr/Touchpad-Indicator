@@ -1,0 +1,306 @@
+# Korean translations for PACKAGE package.
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# chaeya <chaeya@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-15 12:48+0200\n"
+"PO-Revision-Date: 2024-12-30 01:26+0900\n"
+"Last-Translator: chaeya <chaeya@gmail.com>\n"
+"Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/preferences_dialog.py:112 src/touchpadindicator.py:526
+msgid "Preferences"
+msgstr "환경설정"
+
+#: src/preferences_dialog.py:136
+msgid "Shortcut"
+msgstr "단축키"
+
+#: src/preferences_dialog.py:148
+msgid "Shortcut enabled"
+msgstr "단축키 활성화"
+
+#: src/preferences_dialog.py:173
+msgid "Actions"
+msgstr "동작"
+
+#: src/preferences_dialog.py:185
+msgid "Disable touchpad when mouse plugged"
+msgstr "마우스가 연결되면 터치패드 비활성화"
+
+#: src/preferences_dialog.py:191
+msgid "I declare that there are no mice plugged in"
+msgstr "연결된 마우스가 없음을 선언합니다"
+
+#: src/preferences_dialog.py:192
+msgid ""
+"If Touchpad Indicator is not re-enabling the touchpad when you unplug your "
+"mouse, it might help to unplug all mice and click on this"
+msgstr "마우스를 분리했을 때 터치패드가 다시 활성화되지 않는다면, 모든 마우스를 분리하고 이 버튼을 클릭하세요"
+
+#: src/preferences_dialog.py:199
+msgid "On Touchpad Indicator starts:"
+msgstr "터치패드 인디케이터 시작 시:"
+
+#: src/preferences_dialog.py:205 src/preferences_dialog.py:222
+msgid "None"
+msgstr "없음"
+
+#: src/preferences_dialog.py:209 src/preferences_dialog.py:226
+msgid "Enable touchpad"
+msgstr "터치패드 활성화"
+
+#: src/preferences_dialog.py:213 src/preferences_dialog.py:230
+msgid "Disable touchpad"
+msgstr "터치패드 비활성화"
+
+#: src/preferences_dialog.py:216
+msgid "On Touchpad Indicator ends:"
+msgstr "터치패드 인디케이터 종료 시:"
+
+#: src/preferences_dialog.py:234
+msgid "Disable touchpad on typing"
+msgstr "입력 중 터치패드 비활성화"
+
+#: src/preferences_dialog.py:238
+msgid ""
+"Milliseconds to wait after the last key\n"
+"press before enabling the touchpad"
+msgstr "마지막 키 입력 후 터치패드를 활성화하기까지\n대기할 시간(밀리초)"
+
+#: src/preferences_dialog.py:249
+msgid "General options"
+msgstr "일반 옵션"
+
+#: src/preferences_dialog.py:261
+msgid "Autostart"
+msgstr "자동 시작"
+
+#: src/preferences_dialog.py:269
+msgid "Start hidden"
+msgstr "숨김 상태로 시작"
+
+#: src/preferences_dialog.py:273
+msgid "Show notifications"
+msgstr "알림 표시"
+
+#: src/preferences_dialog.py:279
+msgid "Touchpad configuration"
+msgstr "터치패드 설정"
+
+#: src/preferences_dialog.py:291
+msgid "Natural scrolling"
+msgstr "자연스러운 스크롤"
+
+#: src/preferences_dialog.py:305 src/preferences_dialog.py:479
+#: src/preferences_dialog.py:514
+msgid "Touchpad speed"
+msgstr "터치패드 속도"
+
+#: src/preferences_dialog.py:313 src/preferences_dialog.py:489
+msgid "Two finger scolling?"
+msgstr "두 손가락 스크롤?"
+
+#: src/preferences_dialog.py:321 src/preferences_dialog.py:500
+msgid "Edge scolling?"
+msgstr "가장자리 스크롤?"
+
+#: src/preferences_dialog.py:329
+msgid "Circular scolling?"
+msgstr "원형 스크롤?"
+
+#: src/preferences_dialog.py:340
+msgid "Simulation"
+msgstr "시뮬레이션"
+
+#: src/preferences_dialog.py:344
+msgid "Right top corner"
+msgstr "오른쪽 상단 모서리"
+
+#: src/preferences_dialog.py:349 src/preferences_dialog.py:366
+#: src/preferences_dialog.py:383 src/preferences_dialog.py:400
+#: src/preferences_dialog.py:417 src/preferences_dialog.py:435
+#: src/preferences_dialog.py:453
+msgid "Disable"
+msgstr "비활성화"
+
+#: src/preferences_dialog.py:350 src/preferences_dialog.py:367
+#: src/preferences_dialog.py:384 src/preferences_dialog.py:401
+#: src/preferences_dialog.py:418 src/preferences_dialog.py:436
+#: src/preferences_dialog.py:454
+msgid "Left button"
+msgstr "왼쪽 버튼"
+
+#: src/preferences_dialog.py:351 src/preferences_dialog.py:368
+#: src/preferences_dialog.py:385 src/preferences_dialog.py:402
+#: src/preferences_dialog.py:419 src/preferences_dialog.py:437
+#: src/preferences_dialog.py:455
+msgid "Middle button"
+msgstr "가운데 버튼"
+
+#: src/preferences_dialog.py:352 src/preferences_dialog.py:369
+#: src/preferences_dialog.py:386 src/preferences_dialog.py:403
+#: src/preferences_dialog.py:420 src/preferences_dialog.py:438
+#: src/preferences_dialog.py:456
+msgid "Right button"
+msgstr "오른쪽 버튼"
+
+#: src/preferences_dialog.py:361
+msgid "Right bottom corner"
+msgstr "오른쪽 하단 모서리"
+
+#: src/preferences_dialog.py:378
+msgid "Left top corner"
+msgstr "왼쪽 상단 모서리"
+
+#: src/preferences_dialog.py:395
+msgid "Left bottom corner"
+msgstr "왼쪽 하단 모서리"
+
+#: src/preferences_dialog.py:412
+msgid "One finger tap"
+msgstr "한 손가락 탭"
+
+#: src/preferences_dialog.py:430
+msgid "Two finger tap"
+msgstr "두 손가락 탭"
+
+#: src/preferences_dialog.py:448
+msgid "Three finger tap"
+msgstr "세 손가락 탭"
+
+#: src/preferences_dialog.py:466
+msgid "Driver: Synaptics"
+msgstr "드라이버: Synaptics"
+
+#: src/preferences_dialog.py:471
+msgid "Tapping"
+msgstr "탭핑"
+
+#: src/preferences_dialog.py:510
+msgid "Driver: Libinput"
+msgstr "드라이버: Libinput"
+
+#: src/preferences_dialog.py:523
+msgid "Driver: Evdev"
+msgstr "드라이버: Evdev"
+
+#: src/preferences_dialog.py:528
+msgid "Theme"
+msgstr "테마"
+
+#: src/preferences_dialog.py:540
+msgid "Select theme"
+msgstr "테마 선택"
+
+#: src/preferences_dialog.py:656
+msgid "This shortcut <Control> + <Alt> +"
+msgstr "이 단축키 <Control> + <Alt> +"
+
+#: src/preferences_dialog.py:657 src/preferences_dialog.py:659
+msgid " is assigned"
+msgstr " 가 할당됨"
+
+#: src/preferences_dialog.py:658
+msgid "This shortcut <Control> + <Alt> + "
+msgstr "이 단축키 <Control> + <Alt> + "
+
+#: src/touchpadindicator.py:153 src/touchpadindicator.py:166
+#: src/touchpadindicator.py:516
+msgid "Disable Touchpad"
+msgstr "터치패드 비활성화"
+
+#: src/touchpadindicator.py:184 src/touchpadindicator.py:197
+msgid "Enable Touchpad"
+msgstr "터치패드 활성화"
+
+#: src/touchpadindicator.py:214
+msgid "Touchpad Enabled"
+msgstr "터치패드 활성화됨"
+
+#: src/touchpadindicator.py:219
+msgid "Touchpad Disabled"
+msgstr "터치패드 비활성화됨"
+
+#: src/touchpadindicator.py:434
+msgid "Project page"
+msgstr "프로젝트 페이지"
+
+#: src/touchpadindicator.py:439
+msgid "Get help online..."
+msgstr "온라인 도움말..."
+
+#: src/touchpadindicator.py:444
+msgid "Translate this application..."
+msgstr "이 프로그램 번역하기..."
+
+#: src/touchpadindicator.py:449
+msgid "Report a bug..."
+msgstr "버그 신고..."
+
+#: src/touchpadindicator.py:455
+msgid "El atareao"
+msgstr "El atareao"
+
+#: src/touchpadindicator.py:460
+msgid "Follow me on Twitter"
+msgstr "Twitter에서 팔로우"
+
+#: src/touchpadindicator.py:465
+msgid "Follow me on Google+"
+msgstr "Google+에서 팔로우"
+
+#: src/touchpadindicator.py:470
+msgid "Follow me on Facebook"
+msgstr "Facebook에서 팔로우"
+
+#: src/touchpadindicator.py:503
+msgid "About"
+msgstr "정보"
+
+#: src/touchpadindicator.py:521
+msgid "Hide icon"
+msgstr "아이콘 숨기기"
+
+#: src/touchpadindicator.py:532
+msgid "Help"
+msgstr "도움말"
+
+#: src/touchpadindicator.py:537
+msgid "Exit"
+msgstr "종료"
+
+#: src/touchpadindicator.py:552
+msgid "An indicator for the Touchpad"
+msgstr "터치패드 인디케이터"
+
+#: src/touchpadindicator.py:685
+msgid "usage: %prog [options]"
+msgstr "사용법: %prog [옵션]"
+
+#: src/touchpadindicator.py:691
+msgid "show this help and exit."
+msgstr "이 도움말을 표시하고 종료합니다."
+
+#: src/touchpadindicator.py:696
+msgid "change the touchpad state. If indicator is not running launch it."
+msgstr "터치패드 상태를 변경합니다. 인디케이터가 실행 중이 아니면 실행합니다."
+
+#: src/touchpadindicator.py:702
+msgid ""
+"show the icon if indicator is hidden. Default action. If indicator is not "
+"running launch it."
+msgstr "인디케이터가 숨겨져 있으면 아이콘을 표시합니다. 기본 동작입니다. 인디케이터가 실행 중이 아니면 실행합니다."
+
+#: src/touchpadindicator.py:708
+msgid "list devices"
+msgstr "장치 목록"
