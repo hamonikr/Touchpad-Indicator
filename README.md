@@ -26,6 +26,8 @@ sudo apt install -f ./touchpad-indicator_*.deb
 
 ### Usage
 
+#### 프로그램 사용법 (Program Usage)
+
 프로그램 실행 후 시스템 트레이에 터치패드 아이콘을 클릭하여 터치패드를 활성화하거나 비활성화할 수 있습니다.
 
 After running the program, click on the touchpad icon in the system tray to enable or disable the touchpad.
@@ -48,3 +50,20 @@ If you register a shortcut, you can easily enable or disable the touchpad state.
 
 ![스크린샷](./docs/app-5.png)
 
+
+#### 시나몬 애플릿 사용법 (Cinnamon Applet Usage)
+
+1. 시나몬 메뉴 > 시스템 설정 > 애플릿으로 이동합니다.
+   (Go to Cinnamon Menu > System Settings > Applets)
+
+2. 다운로드 탭에서 "Touchpad Indicator" 를 찾아 패널에 추가합니다.
+   (Find "Touchpad Indicator" in the Download tab and add it to the panel)
+
+3. 패널에 추가된 터치패드 아이콘을 클릭하면 메뉴가 나타납니다:
+   (Click the touchpad icon in the panel to show the menu:)
+   - 터치패드 켜기 (Turn on touchpad)
+   - 터치패드 끄기 (Turn off touchpad)
+   - 현재 터치패드 상태 표시 (Shows current touchpad status)
+
+4. 터치패드가 없는 시스템에서는 자동으로 비활성화됩니다.
+   (On systems without a touchpad, it will be automatically disabled)
