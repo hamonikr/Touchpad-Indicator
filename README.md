@@ -53,6 +53,20 @@ If you register a shortcut, you can easily enable or disable the touchpad state.
 
 #### 시나몬 애플릿 사용법 (Cinnamon Applet Usage)
 
+##### 자동 설치 (Automatic Installation)
+
+제공된 설치 스크립트를 사용하여 애플릿을 설치할 수 있습니다:
+(You can install the applet using the provided installation script:)
+
+```bash
+./install-cinnamon-applet.sh
+```
+
+설치가 완료되면 Cinnamon을 재시작(Alt+F2, 'r' 입력)한 후 애플릿을 추가할 수 있습니다.
+(After installation, restart Cinnamon (Alt+F2, type 'r') and you can add the applet.)
+
+##### 수동 설치 (Manual Installation)
+
 1. 시나몬 메뉴 > 시스템 설정 > 애플릿으로 이동합니다.
    (Go to Cinnamon Menu > System Settings > Applets)
 
